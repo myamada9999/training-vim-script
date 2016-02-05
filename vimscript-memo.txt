@@ -1,0 +1,52 @@
+
+vimscriptのお勉強
+-----------------
+
+" 文字列出力
+:echo "hello"
+
+" 文字列入力 文字列連結
+:echo "\nHello ".input("Input your name: ")."-san\n"
+
+" 数値計算
+:echo 111+222
+
+" 変数を使った数値計算
+:let a=111
+:let b=222
+:echo a+b
+
+" 変数を使った文字列連結
+:let a="hello "
+:let b="world "
+:echo a.b
+
+" 16進数と8進数
+:echo 0xffff
+:echo 0755
+
+" 整数型と浮動小数点の除算
+:echo 11/2
+:echo 11.0/2
+
+" 指数表現
+:echo 1.0e3
+:echo 1.0e-3
+
+" \を解釈するかどうか
+" ""は解釈できる、''は解釈できない
+:echo "\n"
+:echo '\n'
+
+
+
+
+" vimscript読み込み
+:source test.vim
+:echo sum
+
+" 現在編集中のvimscriptを実行
+" test.vimを開いた状態で
+:source %
+:echo sum
+
