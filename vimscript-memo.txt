@@ -33,12 +33,32 @@ vimscriptのお勉強
 :echo 1.0e3
 :echo 1.0e-3
 
-" \を解釈するかどうか
+" 特殊文字(例：改行\n)を解釈するかどうか
 " ""は解釈できる、''は解釈できない
 :echo "\n"
 :echo '\n'
 
+" リスト型
+:echo let s = 'foo'
+:echo [ s, 'has', strlen(s), 'bytes' ]
+:echo len(s)
 
+" リスト型に要素追加
+:let alist = []
+:call add(alist, 'foo')
+:call add(alist, 'has')
+:call add(alist, 'box')
+:echo alist
+
+" 要素取り出し
+:let alist = [ 'foo', 'has' ]
+:echo alist[0]
+:echo alist[1]
+
+" 辞書型
+:let en2ja = { 'one' : 'いち', 'two' : 'に' }
+:echo en2ja
+:echo en2ja['one']
 
 
 " vimscript読み込み
