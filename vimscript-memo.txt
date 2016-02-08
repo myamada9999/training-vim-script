@@ -60,6 +60,25 @@ vimscriptのお勉強
 :echo en2ja
 :echo en2ja['one']
 
+" 関数呼び出し
+:echo len('foo')
+:let s = len('foo')
+:call len('foo')
+
+" 文字列連結
+:echo 'foo' . 'foo'
+
+" 部分文字列の操作
+:let s = 'ABCDE'
+:echo s[2]
+:echo s[2:4]
+:echo s[2:]
+:echo s[:2]
+:echo s[-2:]
+:echo s[:-2]
+
+
+
 
 " vimscript読み込み
 :source test.vim
