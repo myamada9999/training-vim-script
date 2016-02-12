@@ -2,73 +2,60 @@
 vimscriptのお勉強
 -----------------
 
-" 文字列出力
 :echo "hello"
 
-" 文字列入力 文字列連結
 :echo "\nHello ".input("Input your name: ")."-san\n"
 
-" 数値計算
 :echo 111+222
 
-" 変数を使った数値計算
 :let a=111
 :let b=222
 :echo a+b
 
-" 変数を使った文字列連結
+" join strings
 :let a="hello "
 :let b="world "
 :echo a.b
 
-" 16進数と8進数
 :echo 0xffff
 :echo 0755
 
-" 整数型と浮動小数点の除算
 :echo 11/2
 :echo 11.0/2
 
-" 指数表現
 :echo 1.0e3
 :echo 1.0e-3
 
-" 特殊文字(例：改行\n)を解釈するかどうか
-" ""は解釈できる、''は解釈できない
+" the difference between "" and ''
 :echo "\n"
 :echo '\n'
 
-" リスト型
 :echo let s = 'foo'
 :echo [ s, 'has', strlen(s), 'bytes' ]
 :echo len(s)
 
-" リスト型に要素追加
 :let alist = []
 :call add(alist, 'foo')
 :call add(alist, 'has')
 :call add(alist, 'box')
 :echo alist
 
-" 要素取り出し
+" list type
 :let alist = [ 'foo', 'has' ]
 :echo alist[0]
 :echo alist[1]
 
-" 辞書型
+" map type
 :let en2ja = { 'one' : 'いち', 'two' : 'に' }
 :echo en2ja
 :echo en2ja['one']
 
-" 関数呼び出し
 :echo len('foo')
 :let s = len('foo')
 :call len('foo')
 
-" 文字列連結
 :echo 'foo' . 'foo'
 
-" 部分文字列の操作
 :let s = 'ABCDE'
 :echo s[2]
 :echo s[2:4]
@@ -79,13 +66,11 @@ vimscriptのお勉強
 
 
 
-
-" vimscript読み込み
+" call vim vimscript
 :source test.vim
 :echo sum
 
-" 現在編集中のvimscriptを実行
-" test.vimを開いた状態で
+" Read current buffer as vim script
 :source %
 :echo sum
 
