@@ -35,3 +35,22 @@ endfunction
 function! WithRange() range
 	echo a:firstline a:lastline
 endfunction
+
+function! WithoutAbort()
+    let s = undefined_variable
+    echo "OMG (not aborted)"
+endfunction
+
+function! WithAbort() abort
+    let s = undefined_variable
+    echo "OMG (not aborted)"
+endfunction
+
+" script local function
+function! s:world()
+    return 'World'
+endfunction
+
+function! Hello()
+    return 'Hello' . s:world()
+endfunction
