@@ -54,3 +54,17 @@ endfunction
 function! Hello()
     return 'Hello' . s:world()
 endfunction
+
+" delete function
+" :echo Average(1,2)
+" :delfunction Average
+" :echo Average(1,2)
+
+" how to call function
+" :echo  Factorial(5)
+" :call Factorial(5)
+" :call(Factorial,[5])
+
+" maxfuncdepth=100
+" :echo Factorail(101)
+
